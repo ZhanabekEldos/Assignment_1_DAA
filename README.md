@@ -35,7 +35,26 @@ After sort: 1 2 3 4 5 6 7
 - **Closest Pair:** validated on small n against O(n²) brute-force solution
 
 ## Run Instructions
+## Results
+
+### Execution Time
+![Time vs N](docs/time_vs_n.png)
+
+### Recursion Depth
+![Depth vs N](docs/depth_vs_n.png)
+
+*(Tables with raw CSV data are in `results.csv`)*
+## Conclusion
+- **MergeSort** behaves as expected: O(n log n).
+- **QuickSort** shows O(n log n) average, with recursion depth ≈ 2*log2(n).
+- **Deterministic Select** achieves linear performance Θ(n), independent of array size.
+- **Closest Pair of Points** matches Θ(n log n) and is much faster than brute-force O(n²) for n > 2000.
+
+The experimental results align well with theoretical predictions. Small deviations are due to constant factors (cache, JVM optimizations, GC).
+
 ```bash
+
 mvn clean install
 mvn test
 java -cp target/algo-project-1.0-SNAPSHOT.jar org.example.Main
+
